@@ -1,0 +1,12 @@
+services:
+  mariadb:
+    image: mariadb:lts
+    environment:
+      MARIADB_ROOT_PASSWORD: doi_dayo
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
