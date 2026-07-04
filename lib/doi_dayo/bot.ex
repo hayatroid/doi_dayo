@@ -8,7 +8,7 @@ defmodule DoiDayo.Bot do
   alias DoiDayo.Papers.Paper
   alias DoiDayo.Traq
 
-  @handled_types ~w(MENTION_MESSAGE_CREATED DIRECT_MESSAGE_CREATED)
+  @handled_types ~w(MESSAGE_CREATED DIRECT_MESSAGE_CREATED)
 
   # 本文中の埋め込み JSON `!{...}` は位置によらず除去する。
   @mention_embed ~r/!\{[^}]*\}/

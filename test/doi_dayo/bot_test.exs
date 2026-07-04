@@ -95,7 +95,7 @@ defmodule DoiDayo.BotTest do
   describe "handle/1 (結合)" do
     defp mention(text) do
       %{
-        "type" => "MENTION_MESSAGE_CREATED",
+        "type" => "MESSAGE_CREATED",
         "body" => %{
           "message" => %{
             "channelId" => @channel,
