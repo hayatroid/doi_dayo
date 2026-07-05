@@ -2,6 +2,8 @@
 
 DOI を管理する traQ bot だよ
 
+![](https://github.com/user-attachments/assets/574c9bef-b345-400d-8c13-2f97b2c1f9c7)
+
 ## コマンド
 
 | コマンド                     | 動作                                           |
