@@ -83,8 +83,14 @@ defmodule DoiDayo.BotTest do
 
       table = Bot.list(papers)
       assert table =~ "| # | タイトル | 年 | DOI |"
-      assert table =~ "| 1 | A Great Paper | 2019 | https://doi.org/10.1145/aaa |"
-      assert table =~ "| 2 | (タイトル不明) |  | https://doi.org/10.1145/bbb |"
+      assert table =~ "| 1 | A Great Paper | 2019 | [10.1145/aaa](//doi.org/10.1145/aaa) |"
+      assert table =~ "| 2 | (タイトル不明) |  | [10.1145/bbb](//doi.org/10.1145/bbb) |"
+    end
+
+    test "list/1 の DOI リンクは OGP 展開を抑制する" do
+      table = Bot.list([%Paper{id: 1, doi: "10.1145/aaa", title: "A Great Paper", year: 2019}])
+      refute table =~ "https://"
+      assert table =~ "(//doi.org/10.1145/aaa)"
     end
 
     test "list/1 は空リストで未登録メッセージ" do

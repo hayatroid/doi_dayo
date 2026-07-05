@@ -153,7 +153,7 @@ defmodule DoiDayo.Bot do
   end
 
   defp row(%Paper{} = paper) do
-    "| #{paper.id} | #{title(paper)} | #{paper.year} | https://doi.org/#{paper.doi} |"
+    "| #{paper.id} | #{title(paper)} | #{paper.year} | [#{paper.doi}](//doi.org/#{paper.doi}) |"
   end
 
   defp title(%Paper{} = paper), do: paper.title || "(タイトル不明)"
